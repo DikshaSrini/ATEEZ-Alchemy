@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATEEZ OUTLAW</title>
+    <link rel="stylesheet" href="path/to/anime.min.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('purple-texture.jpg') center/cover fixed no-repeat;
+            color: #b366ff;
+            font-family: 'Dancing Script', cursive, 'Comic Sans MS', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 48px;
+            font-family: Georgia,Times,Times New Roman,serif; 
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ffcc00;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #b366ff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .record {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #000;
+            border: 2px solid #b366ff;
+            border-radius: 50%;
+            overflow: hidden;
+            animation: spin 4s linear infinite;
+            margin: 20px auto;
+        }
+
+        .record::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .album-cover {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 25px;
+            left: 25px;
+            background-image: url('album-cover.jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+	    text-align: center;
+            margin: 0 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: 'Caveat', cursive;
+            background-color: #ffcc00;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #b366ff;
+            color: #fff !important;
+        }
+
+        #quiz-btn {
+            background-color: #ffcc00;
+            color: #000 !important;
+            padding: 10px 20px;
+            font-size: 16px;
+	    text-align: center;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            font-family: 'Caveat', cursive;
+            transition: background-color 0.3s ease;
+        }
+
+        #quiz-btn:hover {
+            background-color: #b366ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="record">
+            <div class="album-cover"></div>
+        </div>
+        <h1>ATEEZ The World EP.2: Outlaw <br> Extended play by ATEEZ </h1>
+        <h2>About ATEEZ</h2>
+        <section>
+            <h3>ATEEZ is a South Korean boy group known for their diverse genre of music.</h3>
+            <h3>Diksha's favorite song from their album is DJANGO.</h3>
+        </section>
+        <nav>
+            <a href="albums.html">Explore Other Albums <img class="music-icon" src="note-icon.png" alt="Note Icon"></a>
+        </nav>
+        <button id="quiz-btn" onclick="redirectToQuiz()">Take the ATEEZ Quiz <img class="music-icon" src="quiz-icon.png" alt="Quiz Icon"></button>
+    </div>
+
+    <script src="path/to/anime.min.js"></script>
+    <script>
+        function redirectToQuiz() {
+            window.location.href = "quiz.html";
+        }
+    </script>
+</body>
+</html>

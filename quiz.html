@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATEEZ Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('purple-texture.jpg') center/cover fixed no-repeat;
+            color: #b366ff;
+            font-family: 'Dancing Script', cursive, 'Comic Sans MS', sans-serif;
+        }
+
+        #quiz-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            display: none;
+        }
+
+        button {
+            background-color: #b366ff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #301934;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ffcc00;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>ATEEZ Quiz</h1>
+        <div id="question1" class="quiz-question" style="display: block;">
+            <p>1. What is ATEEZ's debut album?</p>
+            <button onclick="checkAnswer('A1')">A. Treasure EP.1: All to Zero</button>
+            <button onclick="checkAnswer('B1')">B. Treasure EP.2: Zero to One</button>
+            <button onclick="checkAnswer('C1')">C. Treasure EP.3: One to All</button>
+        </div>
+        <div id="question2" class="quiz-question" style="display: none;">
+            <p>2. In which year did ATEEZ debut?</p>
+            <button onclick="checkAnswer('C2')">A. 2017</button>
+            <button onclick="checkAnswer('B2')">B. 2018</button>
+            <button onclick="checkAnswer('A2')">C. 2019</button>
+        </div>
+        <div id="question3" class="quiz-question" style="display: none;">
+            <p>3. What is the title track of "Zero: Fever Part.1"?</p>
+            <button onclick="checkAnswer('C3')">A. THANXX</button>
+            <button onclick="checkAnswer('A3')">B. INCEPTION</button>
+            <button onclick="checkAnswer('B3')">C. FEVER</button>
+        </div>
+        <div id="question4" class="quiz-question" style="display: none;">
+            <p>4. Which member of ATEEZ is the main dancer?</p>
+            <button onclick="checkAnswer('C4')">A. Hongjoong</button>
+            <button onclick="checkAnswer('A4')">B. Mingi</button>
+            <button onclick="checkAnswer('B4')">C. Yunho</button>
+        </div>
+        <div id="question5" class="quiz-question" style="display: none;">
+            <p>5. Where did ATEEZ hold their first concert "The Expedition Tour"?</p>
+            <button onclick="checkAnswer('C5')">A. Seoul, South Korea</button>
+            <button onclick="checkAnswer('B5')">B. Tokyo, Japan</button>
+            <button onclick="checkAnswer('A5')">C. Los Angeles, USA</button>
+        </div>
+        <div id="question6" class="quiz-question" style="display: none;">
+            <p>6. ATEEZ's fandom is called...</p>
+            <button onclick="checkAnswer('A6')">A. ATINY</button>
+            <button onclick="checkAnswer('B6')">B. ATOM</button>
+            <button onclick="checkAnswer('C6')">C. AURORA</button>
+        </div>
+        <div id="question7" class="quiz-question" style="display: none;">
+            <p>7. Which ATEEZ member is known for his deep voice and rap skills?</p>
+            <button onclick="checkAnswer('C7')">A. Seonghwa</button>
+            <button onclick="checkAnswer('A7')">B. Wooyoung</button>
+            <button onclick="checkAnswer('B7')">C. Mingi</button>
+        </div>
+        <div id="question8" class="quiz-question" style="display: none;">
+            <p>8. ATEEZ's first reality show is titled...</p>
+            <button onclick="checkAnswer('A8')">A. ATEEZ: Code Name Is ATEEZ</button>
+            <button onclick="checkAnswer('C8')">B. ATEEZ: Fever Road</button>
+            <button onclick="checkAnswer('B8')">C. ATEEZ: Treasure Map</button>
+        </div>
+        <div id="question9" class="quiz-question" style="display: none;">
+            <p>9. ATEEZ's official lightstick is named...</p>
+            <button onclick="checkAnswer('A9')">A. LIGHTINY</button>
+            <button onclick="checkAnswer('B9')">B. ATLIGHT</button>
+            <button onclick="checkAnswer('C9')">C. SHINYTEEZ</button>
+        </div>
+        <div id="question10" class="quiz-question" style="display: none;">
+            <p>10. Which ATEEZ album features the song "HALA HALA"?</p>
+            <button onclick="checkAnswer('B10')">A. Treasure EP.2 : Zero To One</button>
+            <button onclick="checkAnswer('C10')">B. Treasure EP.3 : One To All</button>
+            <button onclick="checkAnswer('A10')">C. Treasure EP. Fin : All To Action</button>
+        </div>
+        <div id="result"></div>
+
+        <script>
+            let score = 0;
+            let currentQuestion = 1;
+
+            function checkAnswer(answer) {
+                if (currentQuestion === 1 && answer === 'A1') {
+                    score++;
+                } else if (currentQuestion === 2 && answer === 'B2') {
+                    score++;
+                } else if (currentQuestion === 3 && answer === 'A3') {
+                    score++;
+                } else if (currentQuestion === 4 && answer === 'B4') {
+                    score++;
+                } else if (currentQuestion === 5 && answer === 'A5') {
+                    score++;
+                } else if (currentQuestion === 6 && answer === 'A6') {
+                    score++;
+                } else if (currentQuestion === 7 && answer === 'C7') {
+                    score++;
+                } else if (currentQuestion === 8 && answer === 'A8') {
+                    score++;
+                } else if (currentQuestion === 9 && answer === 'A9') {
+                    score++;
+                } else if (currentQuestion === 10 && answer === 'B10') {
+                    score++;
+                }
+
+                currentQuestion++;
+                displayNextQuestion();
+            }
+
+            function displayNextQuestion() {
+                document.getElementById(`question${currentQuestion - 1}`).style.display = 'none';
+
+                if (currentQuestion > 10) {
+                    displayResult();
+                } else {
+                    document.getElementById(`question${currentQuestion}`).style.display = 'block';
+                }
+            }
+
+            function displayResult() {
+                document.getElementById('result').innerHTML = `Your score: ${score} / 10`;
+                document.getElementById('result').style.display = 'block';
+            }
+        </script>
+    </div>
+</body>
+</html>
